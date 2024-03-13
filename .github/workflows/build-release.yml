@@ -13,7 +13,7 @@ env:
 jobs:
   release:
     name: Build for ${{ matrix.arch }}
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -118,7 +118,7 @@ jobs:
 
   notify:
     name: Notify Release Publish
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       TRIGGER_URL: ${{ secrets.TRIGGER_URL }}
       TRIGGER_TOKEN: ${{ secrets.TRIGGER_TOKEN }}
